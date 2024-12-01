@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <main>
+        <h1>Expense Tracker</h1>
+        <form id="expense-form">
+            <div>
+                <h2 id="total">Total Balance: £0.00</h2>
+            </div>
+            <div>
+                <label for="item-name">Item:</label>
+                <input type="text" id="item-name" name="item-name" placeholder="Enter item name" required>
+            </div>
+            <div>
+                <label for="item-amount">Amount:</label>
+                <input type="number" id="item-amount" name="item-amount" placeholder="Enter amount" required>
+            </div>
+            <button type="submit">Add Expense</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
