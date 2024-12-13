@@ -10,11 +10,8 @@
     <main>
         <h1>Expense Tracker</h1>
         <form id="expense-form">
+            <h3>Add Expenses:</h3>
             <div>
-                <h2 id="total">Total Balance: £0.00</h2>
-            </div>
-            <div>
-                <label for="item-name">Item:</label>
                 <input type="text" id="item-name" name="item-name" placeholder="Enter item name" required>
             </div>
             <div>
@@ -22,7 +19,25 @@
                 <input type="number" id="item-amount" name="item-amount" placeholder="Enter amount" required>
             </div>
             <button type="submit">Add Expense</button>
+            <h2 id="total">Total Balance: £0.00</h2>
         </form>
+
+        <!-- Table to list expenses -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Amount (£)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            
+            <tbody id="expense-list">
+                <!-- Expenses will be dynamically added here -->
+            </tbody>
+        </table>
+        
+
     </main>
     <script src="script.js"></script>
 </body>

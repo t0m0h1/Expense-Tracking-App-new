@@ -1,9 +1,29 @@
-/* Base styles for h1 */
+/* Base body styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the screen */
+    height: 100vh;
+    background-color: #eaeaea; /* Light background for contrast */
+    font-family: Arial, sans-serif; /* Default font for the body */
+}
 
+/* Main container to hold everything */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit max width */
+    padding: 20px;
+}
+
+/* Title styles */
 h1 {
-    font-family: Arial, sans-serif;
-    font-size: 2rem; /* Default size */
-    margin: 10px;
+    font-size: 2rem;
+    margin-bottom: 20px; /* Space between title and the form */
     text-align: center;
     color: #333;
 }
@@ -19,7 +39,7 @@ h1 {
 @media (min-width: 1200px) {
     h1 {
         font-size: 4rem;
-        letter-spacing: 2px; /* Add spacing for a modern look */
+        letter-spacing: 2px;
     }
 }
 
@@ -27,28 +47,40 @@ h1 {
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
-        color: #555; /* Adjust color for better readability */
+        color: #555;
     }
 }
 
-
-
-
-
-
-
-/* General form styles */
+/* Form styling */
 form {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
+    border: 2px solid #007BFF;
+    margin-bottom: 20px;
 }
 
-/* Form label styling */
+/* Position the form to the right of the page */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row; /* Change to row for larger screens */
+        justify-content: space-between; /* Space between title, form, and table */
+        align-items: flex-start;
+    }
+
+    h1 {
+        margin-right: 30px; /* Add margin between title and form */
+    }
+
+    form {
+        margin-left: 30px;
+    }
+}
+
+/* Form labels */
 label {
     font-size: 16px;
     font-weight: bold;
@@ -57,11 +89,9 @@ label {
     color: #333;
 }
 
-/* Input field styles */
+/* Input fields */
 input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
+input[type="number"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0 20px;
@@ -71,16 +101,14 @@ textarea {
     color: #333;
 }
 
-/* Input field focus effect */
+/* Input focus styles */
 input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-textarea:focus {
+input[type="number"]:focus {
     border-color: #007BFF;
     outline: none;
 }
 
-/* Submit button styles */
+/* Submit button styling */
 button[type="submit"] {
     background-color: #007BFF;
     color: white;
@@ -96,7 +124,50 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Optional: Add spacing between form elements */
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Optional: add spacing between form elements */
 form div {
     margin-bottom: 15px;
+}
+
+/* Table responsive styles */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px; /* Reduce font size on smaller screens */
+    }
+}
+
+/* Final adjustments for mobile */
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center;
+    }
+
+    form {
+        width: 100%; /* Ensure form takes full width on smaller screens */
+        margin-left: 0;
+    }
+
+    table {
+        width: 100%;
+    }
 }
